@@ -5,7 +5,7 @@ build:
     envTemplate:
       template: "{{.DOCKER_REGISTRY}}/ethiebaut/spring-boot-http-gradle:{{.VERSION}}"
   artifacts:
-  - imageName: changeme
+  - imageName: testapp
     workspace: .
     docker: {}
   local: {}
