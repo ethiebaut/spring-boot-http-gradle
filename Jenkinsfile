@@ -24,7 +24,9 @@ pipeline {
             sh "gradle clean build"
             sh 'export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml'
 
+            sh 'echo "=============================================== 1"'
             sh 'docker login -u developer -p P9U9eJJi95U0RFGtT-2luRv4yzv2NVbpbPP9ziNqOd4 172.30.210.7:5000'
+            sh 'echo "=============================================== 1"'
 
             sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:$PREVIEW_VERSION"
           }
@@ -63,7 +65,9 @@ pipeline {
 
             sh 'export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml'
 
+            sh 'echo "=============================================== 2"'
             sh 'docker login -u developer -p P9U9eJJi95U0RFGtT-2luRv4yzv2NVbpbPP9ziNqOd4 172.30.210.7:5000'
+            sh 'echo "=============================================== 2"'
 
             sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
           }
