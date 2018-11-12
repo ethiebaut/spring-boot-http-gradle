@@ -1,4 +1,4 @@
-CHART_REPO := http://jenkins-x-chartmuseum:8080
+CHART_REPO := https://jenkins-x-chartmuseum-jx.jdn.co
 CURRENT=$(pwd)
 NAME := spring-boot-http-gradle
 OS := $(shell uname)
